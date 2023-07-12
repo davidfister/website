@@ -1,24 +1,38 @@
+.card_slideshow{+
+}
+
 .card_container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-
-.card {
-  display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 80vh;
+}
+
+.card {
+  position: relative;
   width: 300px;
   height: 400px;
   background-color: #f9f9f9;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px 5px red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -200px 0 0 -150px; /* Apply negative top and left margins to truly center the element */
+  transform-style: preserve-3d;
+  transform: rotateY(var(--rotateY)) rotateX(var(--rotateX));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card::after {
+  content: "";
+  position: absolute; 
+  background: red;
+  border-radius: inherit;
+  width: 105%;
+  height: 105%;
+  filter: blur(10px);
+  transform: translateZ(-50px);
 }
 
 .image-section {
@@ -39,12 +53,28 @@
 }
 
 .navbar{
-	display: flex;
-  align-items: center;
-  flex-direction: column;
+
 }
 
 .nav-list {
+  display: flex;
+  justify-content: start;
   list-style-type: none;
 }
+.nav-list li{
+  padding: 10px;
+  margin-right: 40px;
+  background-color: red;
+  
+}
+.nav-list li:hover{
+  padding: 10px;
+  margin-right: 40px;
+  background-color: grey;
+  
+}
 
+.card_slideshow-left{
+  display: flex;
+  justify-content: left ;
+}
