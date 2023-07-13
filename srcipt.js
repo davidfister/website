@@ -14,8 +14,9 @@ function rotateCard(event) {
   const angleX = deltaY / (window.innerHeight/ 2) * 25;
   const angleY = -deltaX / (window.innerWidth/ 2) * 25;
   console.log(angleX);
-  document.querySelector('.card').style.setProperty("--rotateX", angleX + "deg");
-  document.querySelector('.card').style.setProperty("--rotateY", angleY + "deg");
+  document.querySelector('.card').style.setProperty("--rotateX", -1 * angleX + "deg");
+  document.querySelector('.card').style.setProperty("--rotateY", -1 * angleY + "deg");
 }
+
 
 document.addEventListener('mousemove', rotateCard);

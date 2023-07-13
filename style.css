@@ -1,4 +1,88 @@
-.card_slideshow{+
+* {
+padding: 0px;
+margin: 0px;}
+
+body {
+min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin: 30px;
+  margin-top: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 70px;
+  height: 40px;
+  flex-direction: row;
+}
+footer a{
+  margin-right: 10px;
+  font-family:'Courier New';
+}
+
+body::before {
+  content: "";
+   background-image: linear-gradient(to right top, #051937, #002464, #002d92, #0032bf, #122feb);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;   
+}
+
+.navbar{
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: start;
+  list-style-type: none;
+}
+.nav-list li{
+  padding: 10px;
+  margin-right: 40px;
+  background-color: red;
+  
+}
+.nav-list li:hover{
+  padding: 10px;
+  margin-right: 40px;
+  background-color: grey;
+  
+}
+
+.card-slideshow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-slideshow-button{
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.5s;
+  font-size: 20px;
+  border: none;
+  color: black;
+  box-shadow: 4px 10px #050A2C;
+}
+.card-slideshow-button:hover{
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: none;
+  transition: 0.5s;
+  color: black;
 }
 
 .card_container {
@@ -24,10 +108,17 @@
   align-items: center;
 }
 
+.card-content{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
 .card::after {
   content: "";
   position: absolute; 
-  background: red;
+  background: white;
   border-radius: inherit;
   width: 105%;
   height: 105%;
@@ -50,31 +141,4 @@
   padding: 5px;
   background-color: #f9f9f9;
   text-align: center;
-}
-
-.navbar{
-
-}
-
-.nav-list {
-  display: flex;
-  justify-content: start;
-  list-style-type: none;
-}
-.nav-list li{
-  padding: 10px;
-  margin-right: 40px;
-  background-color: red;
-  
-}
-.nav-list li:hover{
-  padding: 10px;
-  margin-right: 40px;
-  background-color: grey;
-  
-}
-
-.card_slideshow-left{
-  display: flex;
-  justify-content: left ;
 }
