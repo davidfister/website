@@ -1,5 +1,12 @@
 const card = document.querySelector('.card'); 
 const cursor = document.querySelector('.cursor');
+document.querySelector('body').onload = function(){document.querySelector('body').style.setProperty("--deg", 45 +"deg");};
+
+
+function flip(){
+	document.querySelector('body').style.transform = "rotateY(180deg)";
+}
+
 
 function rotateCard(event) {
   const cardRect = card.getBoundingClientRect();
@@ -37,6 +44,8 @@ function changeColor(event) {
   
   body.style.setProperty("--deg", deg +"deg");
 }
+
+
 
 
 document.addEventListener('mousemove', rotateCard);
